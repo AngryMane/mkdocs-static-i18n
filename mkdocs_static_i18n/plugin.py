@@ -40,7 +40,6 @@ class I18n(ExtendedPlugin):
         self.original_configs = {}
         self.original_theme_configs = {}
         self.search_entries = []
-        self.dirty = False
 
     @plugins.event_priority(-100)
     def on_config(self, config: MkDocsConfig):
