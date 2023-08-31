@@ -33,6 +33,14 @@ class I18n(ExtendedPlugin):
         Store dirty flag to propagate it to language builds.
         """
         self.dirty = dirty
+        self.building = False
+        self.current_language = None
+        self.extra_alternate = {}
+        self.i18n_files_per_language = {}
+        self.original_configs = {}
+        self.original_theme_configs = {}
+        self.search_entries = []
+        self.dirty = False
 
     @plugins.event_priority(-100)
     def on_config(self, config: MkDocsConfig):
